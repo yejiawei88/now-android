@@ -1,0 +1,294 @@
+{
+  "shortcuts": [
+    {
+      "id": "1773907326835",
+      "name": "AI组",
+      "type": "GROUP",
+      "actions": [
+        {
+          "id": "action_1773907259522_u37ec8",
+          "type": "URL",
+          "target": "https://chatgpt.com/",
+          "repeatOpen": true
+        },
+        {
+          "id": "action_1773907294235_x8hd42",
+          "type": "URL",
+          "target": "https://www.doubao.com/chat/",
+          "repeatOpen": true
+        }
+      ],
+      "keys": "Shift+W",
+      "visible": true,
+      "repeatOpen": true
+    },
+    {
+      "id": "1773903819232",
+      "name": "灵感组",
+      "type": "GROUP",
+      "actions": [
+        {
+          "id": "action_1773903769580_lpv1bu",
+          "type": "URL",
+          "target": "https://www.pinterest.com/w1826818/",
+          "label": "1",
+          "repeatOpen": true
+        },
+        {
+          "id": "action_1773903796709_54yzj5",
+          "type": "URL",
+          "target": "https://dribbble.com/shots",
+          "label": "2",
+          "repeatOpen": false
+        }
+      ],
+      "keys": "Shift+P",
+      "visible": true,
+      "repeatOpen": true
+    },
+    {
+      "id": "1772946204045",
+      "name": "obsidian",
+      "type": "APP",
+      "path": "D:\\software\\Obsidian\\Obsidian.exe",
+      "keys": "Alt+Z",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1771663364154",
+      "name": "即梦",
+      "type": "URL",
+      "path": "https://jimeng.jianying.com/ai-tool/home/",
+      "keys": "Shift+J",
+      "visible": true,
+      "repeatOpen": true
+    },
+    {
+      "id": "1771660945627",
+      "name": "eagle",
+      "type": "APP",
+      "path": "D:\\software\\qq音乐\\tencent\\QQMusic\\QQMusic.exe",
+      "keys": "Shift+K",
+      "visible": false,
+      "repeatOpen": false,
+      "isRunning": true,
+      "instances": 1
+    },
+    {
+      "id": "1770479234220",
+      "name": "Github",
+      "type": "URL",
+      "path": "https://github.com/",
+      "keys": "Alt+G",
+      "visible": true,
+      "repeatOpen": false,
+      "isRunning": true,
+      "instances": 1
+    },
+    {
+      "id": "1770203821733",
+      "name": "小红书",
+      "type": "URL",
+      "path": "https://www.xiaohongshu.com",
+      "keys": "Shift+R",
+      "visible": true,
+      "repeatOpen": true,
+      "isRunning": true,
+      "instances": 1
+    },
+    {
+      "id": "1770194408912",
+      "name": "x",
+      "type": "URL",
+      "path": "https://x.com/home",
+      "keys": "Shift+T",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1770192559962",
+      "name": "抖音",
+      "type": "URL",
+      "path": "https://www.douyin.com/jingxuan",
+      "keys": "Ctrl+Shift+D",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1770180726796",
+      "name": "豆包",
+      "type": "URL",
+      "path": "https://www.doubao.com/chat/",
+      "keys": "Shift+D",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1770180687113",
+      "name": "知乎",
+      "type": "URL",
+      "path": "https://www.zhihu.com/hot",
+      "keys": "Shift+H",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1770180472226",
+      "name": "B站",
+      "type": "URL",
+      "path": "https://www.bilibili.com/",
+      "keys": "Shift+B",
+      "visible": true,
+      "repeatOpen": false
+    },
+    {
+      "id": "1770180440660",
+      "name": "Youtub",
+      "type": "URL",
+      "path": "https://www.youtube.com/feed/news_destination/business",
+      "keys": "Shift+Y",
+      "visible": true,
+      "repeatOpen": true,
+      "isRunning": true,
+      "instances": 1
+    },
+    {
+      "id": "1769833546323",
+      "name": "gemini",
+      "type": "URL",
+      "path": "https://gemini.google.com/app?hl=zh-cn",
+      "keys": "Shift+G",
+      "visible": true,
+      "repeatOpen": true,
+      "isRunning": true,
+      "instances": 2
+    },
+    {
+      "id": "1769541899619",
+      "name": "Notion",
+      "type": "APP",
+      "path": "C:\\Users\\18268\\AppData\\Local\\Programs\\Notion\\Notion.exe",
+      "keys": "Shift+Z",
+      "visible": false,
+      "repeatOpen": false,
+      "isRunning": true,
+      "instances": 1
+    }
+  ],
+  "settings": {
+    "autoStart": false,
+    "runAsAdmin": false,
+    "runInBackground": true,
+    "hideTray": false,
+    "hideMainTaskbar": false,
+    "mainShortcut": "",
+    "topMostKey": "Alt+T",
+    "screenshotShortcut": "Shift+S",
+    "clipboardShortcut": "Alt+C",
+    "voiceInputShortcut": "Shift+Q",
+    "exportAllShortcut": "",
+    "importAllShortcut": "",
+    "exportClipboardShortcut": "",
+    "importClipboardShortcut": "",
+    "pasteTagsWithComma": true,
+    "pasteContentWithTags": false,
+    "language": "zh",
+    "enableClipboardHistory": false,
+    "enableEdgeHide": false
+  },
+  "translationSettings": {
+    "provider": "API",
+    "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+    "model": "glm-4-flash",
+    "apiKey": "",
+    "verified": true,
+    "quickChatShortcut": "Shift+C",
+    "customActions": [
+      {
+        "id": "quick_translate",
+        "name": "快速翻译",
+        "prompt": "你是精通中英互译的助手。翻译以下文本：\n{{text}}\n规则：\n1. 英文转中文，中文转英文\n2. 仅输出翻译结果，无任何解释/问候\n3. 风格自然准确",
+        "shortcut": "Shift+X",
+        "isSystem": true
+      },
+      {
+        "id": "prompt_optimize",
+        "name": "提示词优化",
+        "prompt": "请使用 CO-STAR 框架 彻底优化括号中的原始提示词 {{text}}。\n框架执行指南：\nC (Context)：明确任务背景。\nO (Objective)：定义核心目标。\nS (Style)：设定写作风格。\nT (Tone)：确立输出语调。\nA (Audience)：明确受众。\nR (Response)：规定返回格式。\n优化约束：\n1. 必须包含“自动语种识别”逻辑。\n2. 语言一致性：输入为中文则输出中文优化结果，输入为英文则输出英文优化结果。\n3. 标签本地化：若输出为中文，请将框架标签（Context, Objective, Style, Tone, Audience, Response）也翻译为对应的中文（如：背景、目标、风格、语调、受众、回复格式）。\n4. 严禁任何形式的预言、总结 or 解释性文字。\n5. 直接输出优化后的 Prompt 内容，不要输出关于优化过程的废话。",
+        "shortcut": "Alt+Y",
+        "isSystem": false
+      },
+      {
+        "id": "summarize_text",
+        "name": "摘要总结",
+        "prompt": "Role: 你是一位信息架构专家，擅长将冗长内容转化为高信息密度的结构化总结。\nInstruction: 请对以下内容 {{text}} 进行总结。\nMethodology (SCQA):\nSituation (情境): 用一句话描述背景。\nComplication (冲突): 识别核心矛盾或痛点。\nQuestion (问题): 核心要解决的是什么。\nAnswer (答案): 最终的结论或解决方案。\nOutput Constraint:\n1. 必须包含“自动语种识别”逻辑。\n2. 语言一致性：输入为中文则输出中文总结，输入为英文则输出英文总结。\n3. 严禁任何形式的预言、总结 or 解释性文字。\n4. 使用 Markdown 列表格式（Key Takeaways & Action Items）。",
+        "shortcut": "Alt+J",
+        "isSystem": false
+      }
+    ],
+    "savedConfigs": [
+      {
+        "id": "1773644550934",
+        "name": "glm-4-flash",
+        "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+        "model": "glm-4-flash",
+        "apiKey": "",
+        "verified": true
+      },
+      {
+        "id": "1773645006813",
+        "name": "glm-4-flash",
+        "endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+        "model": "glm-4-flash",
+        "apiKey": "",
+        "verified": true
+      },
+      {
+        "id": "1773724917500",
+        "name": "gemini-2.5-flash",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "model": "gemini-2.5-flash",
+        "apiKey": "",
+        "verified": true
+      },
+      {
+        "id": "1774151077527",
+        "name": "z-ai/glm4.7",
+        "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+        "model": "z-ai/glm4.7",
+        "apiKey": "",
+        "verified": true
+      }
+    ],
+    "selectionShortcut": "",
+    "youdaoAppKey": "",
+    "youdaoAppSecret": ""
+  },
+  "libraries": [
+    {
+      "id": "default",
+      "name": "默认库"
+    }
+  ],
+  "clipboardCategories": {
+    "default": [
+      "🩵 设计",
+      "💚 代办",
+      "🎙️配音",
+      "🐳 测试",
+      "📹 视频",
+      "🪙 销售",
+      "🎯运营",
+      "🧑‍⚖️ 法务",
+      "📃文案",
+      "🧠 思维",
+      "✉️ HR",
+      "🚀 开发",
+      "💻 产品",
+      "🐉 产品",
+      "需求管理"
+    ]
+  },
+  "version": "1.5"
+}

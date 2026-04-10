@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "sessions": {
+    "973433ea7c514ea889b9211a46e8f132": [
+      {
+        "expertId": "SeniorDeveloper",
+        "name": "Will",
+        "profession": "高级开发工程师",
+        "avatarUrl": "https://acc-1258344699.cos.accelerate.myqcloud.com/workbuddy/experts/avatars/02-Engineering/SeniorDeveloper/SeniorDeveloper.png",
+        "promptUrl": "https://acc-1258344699.cos.accelerate.myqcloud.com/workbuddy/experts/experts/02-Engineering/SeniorDeveloper/SeniorDeveloper_zh.md",
+        "usedAt": 1775720121706,
+        "industryId": "all"
+      }
+    ]
+  },
+  "lastUpdated": 1775720327983
+}

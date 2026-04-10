@@ -1,0 +1,1 @@
+💊 ️ PAS 模型，即Problem（问题）、Agitation（焦虑）、Solution（解决方案）。通过痛点切入，最后给出产品作为解药。

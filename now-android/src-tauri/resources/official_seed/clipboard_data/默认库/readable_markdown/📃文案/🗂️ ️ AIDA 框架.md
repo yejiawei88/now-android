@@ -1,0 +1,1 @@
+🗂️ ️ AIDA 框架，Attention（吸引）、Interest（兴趣）、Desire（欲望）、Action（行动）。经典的转化漏斗式写作。
