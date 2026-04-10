@@ -1,0 +1,12 @@
+[target.aarch64-linux-android]
+linker = "C:\\Users\\18268\\ANDROI~2\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\aarch64-clangxx.bat"
+
+[build]
+target = "aarch64-linux-android"
+dir = "C:\\Users\\18268\\target"
+
+[env]
+CC_aarch64-linux-android = { value = "C:\\Users\\18268\\ANDROI~2\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\aarch64-clang.bat", force = true }
+CXX_aarch64-linux-android = { value = "C:\\Users\\18268\\ANDROI~2\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\aarch64-clangxx.bat", force = true }
+AR_aarch64-linux-android = { value = "C:\\Users\\18268\\ANDROI~2\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\llvm-ar.exe", force = true }
+CARGO_TARGET_AARCH64-LINUX-ANDROID_DIR = { value = "C:\\Users\\18268\\target", force = true }

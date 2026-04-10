@@ -1,0 +1,918 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter Variable', 'Inter', -apple-system, sans-serif !important;
+  line-height: 1.4;
+  font-weight: 500;
+  font-feature-settings: "cv02", "cv05", "cv08", "cv11", "ss01", "tnum", "case", "calt" !important;
+  font-variation-settings: 'wght' 500, 'opsz' 32 !important;
+  letter-spacing: -0.03em !important;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.95);
+  background-color: #09090B;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter Variable', 'Inter', sans-serif !important;
+  font-weight: 500;
+  font-feature-settings: "cv02", "cv05", "cv08", "cv11", "ss01", "tnum", "case", "calt" !important;
+  font-variation-settings: 'wght' 500, 'opsz' 32 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Force bolder weights for Inter Milan look */
+b,
+strong,
+.font-bold {
+  font-weight: 700 !important;
+  font-variation-settings: 'wght' 700 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.font-medium {
+  font-weight: 600 !important;
+  font-variation-settings: 'wght' 600 !important;
+  letter-spacing: -0.035em !important;
+}
+
+html,
+body,
+#root {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #09090B !important;
+}
+
+#root {
+  background-color: #09090B !important;
+}
+
+html {
+  background-color: #09090B !important;
+}
+
+/* Fix for black screen during drag-and-drop or view switching */
+.dragging-active html,
+.dragging-stabilizing html {
+  background-color: #09090B !important;
+}
+
+.dragging-active body,
+.dragging-active #root,
+.dragging-stabilizing body,
+.dragging-stabilizing #root {
+  background-color: #09090B !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Global typography resets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+#app-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-color: #09090b;
+  font-family: 'Inter Variable', 'Inter', sans-serif !important;
+}
+
+.titlebar {
+  height: 40px;
+  background: transparent;
+  user-select: none;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.titlebar-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 40px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.titlebar-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#titlebar-close:hover {
+  background: #e81123;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.drag-region {
+  -webkit-app-region: drag;
+  user-select: none;
+  cursor: default;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+/* Transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+/* Utility classes */
+.blur-bg {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-shadow {
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation utilities */
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.material-symbols-outlined {
+  transition: font-variation-settings 0.2s ease;
+}
+
+/* Global background grid removal reset */
+body,
+.document-editor-container,
+.clipboard-view-container,
+.custom-editor-scrollbar {
+  background-image: none !important;
+  background-size: auto !important;
+}
+
+/* Markdown Preview Styling */
+.markdown-preview table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.markdown-preview th {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.markdown-preview td {
+  padding: 12px 16px;
+  color: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.markdown-preview tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-preview tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* Markdown Heading Hierarchy - Ultra Specific Ovrerride */
+.markdown-preview.prose h1,
+#root .markdown-preview.prose h1,
+.cm-editor .cm-line.cm-header-1,
+.cm-editor .cm-line.cm-header-1 span,
+.cm-editor .cm-line.cm-header-1 * {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.98) !important;
+  line-height: 1.2 !important;
+}
+
+.markdown-preview.prose h2,
+#root .markdown-preview.prose h2,
+.cm-editor .cm-line.cm-header-2,
+.cm-editor .cm-line.cm-header-2 span,
+.cm-editor .cm-line.cm-header-2 * {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  line-height: 1.3 !important;
+}
+
+.markdown-preview.prose h3,
+#root .markdown-preview.prose h3,
+.cm-editor .cm-line.cm-header-3,
+.cm-editor .cm-line.cm-header-3 span,
+.cm-editor .cm-line.cm-header-3 * {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  line-height: 1.4 !important;
+}
+
+/* Specific fix for AI Icon grayscale */
+.ai-icon-inactive {
+  filter: grayscale(100%) saturate(0) brightness(0.7) !important;
+  -webkit-filter: grayscale(100%) saturate(0) brightness(0.7) !important;
+  opacity: 0.9 !important;
+}
+
+/* Gradient Mask Utilities */
+.mask-fade-y {
+  mask-image: linear-gradient(to bottom,
+      transparent 0%,
+      black 40px,
+      black calc(100% - 40px),
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0%,
+      black 40px,
+      black calc(100% - 40px),
+      transparent 100%);
+}
+
+/* --- Professional Table Editor Enhancements --- */
+.cm-table-rendering-pro {
+  margin: 2px 0 !important; /* Extremely tight */
+  padding: 0 !important;
+  position: relative;
+  overflow: visible;
+  line-height: 1;
+  width: 100%;
+}
+
+.hot-viewport-pro {
+  background: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* Handsontable Dark Theme Overrides */
+.dark-theme-table .handsontable {
+  background: transparent;
+  color: #e4e4e7;
+  font-family: inherit;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dark-theme-table .wtHolder {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Custom Aggressive-Dark Scrollbar for Handsontable */
+.dark-theme-table * {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.05) transparent !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important;
+  background: transparent !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 10px !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.dark-theme-table *::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+.dark-theme-table .handsontable th,
+.dark-theme-table .handsontable td {
+  background: #0c0c0e !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: #d1d1d6 !important;
+  font-size: 14px;
+}
+
+.dark-theme-table .handsontable td.htHeaderRow {
+    background: rgba(255, 255, 255, 0.05) !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.cm-markdown-link,
+.markdown-preview a {
+    color: rgba(255, 255, 255, 0.55) !important;
+    text-decoration: none !important;
+    border-bottom: 1.5px dashed rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 1px;
+    cursor: pointer;
+}
+
+.cm-markdown-link:hover,
+.markdown-preview a:hover {
+    color: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.cm-link-active {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* --- Executive Link Tooltip System --- */
+.cm-tooltip {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.cm-link-tooltip {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    background: #18181b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6) !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(16px) !important;
+    color: white !important;
+    z-index: 1000 !important;
+    font-family: inherit !important;
+}
+
+.cm-link-tooltip-btn {
+    appearance: none !important;
+    border: none !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    white-space: nowrap !important;
+}
+
+.cm-link-tooltip-btn:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+}
+
+.cm-link-tooltip-open {
+    padding-left: 14px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.cm-link-tooltip-sep {
+    width: 1px !important;
+    height: 16px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.cm-link-tooltip-edit {
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.cm-link-tooltip svg {
+    opacity: 0.5 !important;
+    transition: opacity 0.2s !important;
+}
+
+.cm-link-tooltip-btn:hover svg {
+    opacity: 0.9 !important;
+}
+
+.cm-tooltip-arrow::after {
+    border-top-color: #18181b !important;
+}
+.cm-tooltip-arrow::before {
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Edit Mode Styles */
+.cm-link-edit-container {
+    display: flex !important;
+    align-items: center !important;
+    padding: 4px 6px !important;
+    min-width: 280px !important;
+    gap: 4px !important;
+}
+
+.cm-link-edit-input {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    color: white !important;
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    flex: 1 !important;
+    outline: none !important;
+    transition: all 0.2s !important;
+}
+
+.cm-link-edit-input:focus {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+.cm-link-unlink-btn {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    padding: 8px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s !important;
+}
+
+.cm-link-unlink-btn:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+
+.dark-theme-table .handsontable td.htFirstColumn {
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.dark-theme-table .handsontable td.htHeaderRow.htFirstColumn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    /* Header takes priority */
+}
+
+.dark-theme-table .handsontable th {
+    background: #18181b !important;
+    font-weight: 600;
+}
+
+.dark-theme-table .handsontable .htPlaceholder {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-theme-table .handsontable .current,
+.dark-theme-table .handsontable .area {
+  background: rgba(96, 165, 250, 0.1) !important;
+}
+
+.dark-theme-table .handsontable .wtBorder.current {
+  background-color: #60a5fa !important;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+  transition: background-color 0.2s;
+}
+
+.cm-table-resizer:hover {
+  background: rgba(96, 165, 250, 0.5);
+}
+
+/* --- Executive Context Menu - No Border Policy --- */
+.htContextMenu,
+.htContextMenu * {
+  border: 0 none transparent !important;
+  outline: 0 none transparent !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.htContextMenu {
+  background: rgba(18, 18, 20, 0.98) !important; /* Near solid dark but still premium */
+  backdrop-filter: blur(24px) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 1) !important; /* Only use external shadow */
+  padding: 5px !important;
+  overflow: hidden !important;
+}
+
+.htContextMenu .ht_master,
+.htContextMenu .wtHolder,
+.htContextMenu table.htCore {
+  border: none !important;
+  background: transparent !important;
+}
+
+.htContextMenu table.htCore td {
+  background: transparent !important;
+  border: none !important;
+  color: #e4e4e7 !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+}
+
+.htContextMenu table.htCore td:hover,
+.htContextMenu table.htCore td.current {
+  background: rgba(96, 165, 250, 0.15) !important;
+  color: #60a5fa !important;
+  transform: translateX(2px);
+}
+
+.htContextMenu .ht_master .wtHolder {
+  overflow: hidden !important;
+}
+
+/* Subtle row hover highlight for table */
+.dark-theme-table .handsontable tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Fully eliminate separators/blank rows in context menu */
+.htContextMenu .htSeparator {
+  display: none !important;
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom,
+      black calc(100% - 40px),
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom,
+      black calc(100% - 40px),
+      transparent 100%);
+}
+
+/* --- CodeMirror Search Panel Beautification --- */
+.cm-panels {
+  background-color: #121214 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.cm-panels-bottom {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100 !important;
+}
+
+.cm-search {
+  background-color: transparent !important;
+  color: #e4e4e7 !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  font-family: inherit !important;
+  position: relative !important;
+}
+
+/* First Row: Find & Replace */
+.cm-search > div {
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.cm-search input[type="text"] {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  width: 180px !important;
+  outline: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cm-search input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05) !important;
+}
+
+.cm-search button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 5px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cm-search button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.cm-search button:active {
+  transform: translateY(0);
+}
+
+.cm-search label {
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  cursor: pointer !important;
+  padding: 0 4px !important;
+  transition: color 0.15s !important;
+}
+
+.cm-search label:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.cm-search input[type="checkbox"] {
+  accent-color: #ffffff !important;
+  width: 14px !important;
+  height: 14px !important;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+}
+
+.cm-search [name="close"] {
+  position: absolute !important;
+  right: 12px !important;
+  top: 12px !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  border: none !important;
+  background: transparent !important;
+  font-size: 18px !important;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+}
+
+.cm-search [name="close"]:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: none !important;
+}
+
+/* --- Mobile Touch Optimizations --- */
+
+/* Touch device specific styles */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects that rely on mouse */
+  .group-hover\:opacity-100,
+  .group-hover\:opacity-40,
+  .group-hover\:translate-x-0 {
+    opacity: inherit;
+    transform: inherit;
+  }
+
+  /* Make interactive elements larger for touch */
+  button, 
+  [role="button"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase touch target for small buttons */
+  .absolute.right-2 button,
+  .absolute.right-1\.5 button {
+    min-height: 36px;
+    min-width: 36px;
+  }
+
+  /* Better tap feedback */
+  button:active,
+  [role="button"]:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+
+  /* Remove text selection on UI elements */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent callout on long press */
+  * {
+    -webkit-touch-callout: none;
+  }
+
+  /* Smooth scrolling */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Active state for touch feedback */
+.ios-item-hover:active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Touch-friendly button states */
+.touch-active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Always visible on touch devices */
+.touch-visible {
+  opacity: 1 !important;
+}
+
+/* --- Long Press Visual Feedback Styles --- */
+
+/* Base long-pressing animation */
+@keyframes longPressPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(10, 132, 255, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 132, 255, 0);
+  }
+}
+
+/* Long press active state for cards */
+.long-pressing {
+  animation: longPressPulse 0.5s ease-out forwards;
+  transition: transform 0.15s ease-out;
+}
+
+/* Long press active state with scale effect */
+.long-pressing.scale-\[0\.98\] {
+  transform: scale(0.98) !important;
+}
+
+/* Long press ring for category tabs */
+.category-tab.long-pressing {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(10, 132, 255, 0.5) !important;
+  animation: longPressPulse 0.5s ease-out forwards;
+}
+
+/* Long press highlight for tags */
+[data-tag-item].long-pressing {
+  animation: longPressPulse 0.5s ease-out forwards;
+}
+
+/* Disable user select during long press to prevent text selection */
+.long-pressing,
+.long-pressing * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Touch action optimization for long press */
+.long-press-enabled {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+}
